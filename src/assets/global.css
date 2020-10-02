@@ -1,0 +1,129 @@
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #001529;
+}
+
+li {
+  list-style: none;
+}
+
+.my-active {
+  color: rgb(64, 169, 255);
+  font-size: 1.03rem;
+  font-weight: 450;
+}
+
+/* 白色背景黑色字 */
+.white {
+  background-color: #fff;
+  color: #000000;
+}
+
+.black {
+  background-color: #000;
+  color: #fff;
+}
+
+.padding3 {
+  padding: 0 3px;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.logo>img {
+
+  width: 160px;
+
+}
+
+
+/*   :class="$store.state.theme=='dark'?'dark-mode':null"    */
+.dark-mode {
+  background-color: #001529;
+}
+
+.dark-mode * {
+  color: #6a7d8d;
+}
+
+
+
+.clear {
+  clear: both;
+}
+
+.nav-list {
+  margin: 10px;
+  overflow: hidden;
+}
+
+.nav-list h1 {
+  font-size: 1.5rem;
+}
+
+.nav-list h2 {
+  font-size: 1.25rem;
+  margin-left: 10px;
+}
+
+.nav-list h3 {
+  font-size: 1rem;
+  margin-left: 20px;
+}
+
+/* test border */
+.tb {
+  border: 1px solid red;
+}
+
+/* flex布局垂直水平居中 */
+.juzhong {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*  居中并变成相对的*/
+.wrapper {
+  margin: 0 auto;
+  position: relative;
+}
+
+/* 清除背景 */
+.nobg {
+  background: none !important;
+}
+
+/* 隐藏 */
+.hidden {
+  display: none !important;
+}
+
+/* ant design vue 相关央视改动 */
+.ant-radio-button-wrapper>span {
+  color: #001529;
+}
+
+.ant-menu {
+  font-size: 16px;
+  line-height: 64px;
+}
+
+.ant-menu-horizontal>.ant-menu-item-selected {
+  border: none;
+}
+
+.ant-list-pagination {
+  text-align: center !important;
+}
