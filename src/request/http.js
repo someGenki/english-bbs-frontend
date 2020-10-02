@@ -7,9 +7,9 @@
 import axios from 'axios'; // 引入axios
 import router from '../router/index.js'
 // 根据环境 设置 请求根路径 or 接口地址
-const BASEURL = process.env.NODE_ENV === "production" ? 'http://47.100.95.40:8086/' : 'http://localhost:8086/';
+// const BASEURL = process.env.NODE_ENV === "production" ? 'http://47.100.95.40:8086/' : 'http://localhost:8086/';
 // const BASEURL = process.env.NODE_ENV === "production" ? 'http://47.106.208.132:8086/' : 'http://47.106.208.132:8086/'; // 该服务器已过期
-// const BASEURL = process.env.NODE_ENV === "production" ? 'http://47.100.95.40:8086/' : 'http://47.100.95.40:8086/';
+const BASEURL = process.env.NODE_ENV === "production" ? 'http://47.100.95.40:8086/' : 'http://47.100.95.40:8086/';
 // console.log(process.env)
 // 目前已处理的错误请求
 const errorSet = new Set([400, 401, 403, 404, 500]);

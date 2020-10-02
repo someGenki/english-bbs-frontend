@@ -26,6 +26,13 @@ export default {
       ? axios.get('/user/newest')
       : axios.get('/user/newest?uid=' + uid)
   },
+  // 获取用户的通知
+  getNotice() {
+    return axios.get('/notice')
+  },
+  readNotice(id) {
+    return axios.put('/notice/' + id);
+  },
   // 判断邮箱/用户名是否重复
   exist(type, val) {
     return axios.get(`/user/exist?type=${type}&value=${val}`)

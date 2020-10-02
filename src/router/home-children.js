@@ -15,14 +15,21 @@ const children = [
       title: '帖子'
     },
     component: () => import('@/views/post/post.vue')
-  },  {
+  }, {
     path: '/article/:aid',
     name: 'article',
     meta: {
       title: '文章'
     },
     component: () => import('@/views/read/detail.vue')
-  },{
+  }, {
+    path: '/read',
+    name: 'read',
+    meta: {
+      title: '阅读'
+    },
+    component: () => import('@/views/read/read.vue')
+  }, {
     path: '/signin',
     name: 'signin',
     meta: {
@@ -65,7 +72,10 @@ const children = [
   }, {
     path: '/space/:uid',
     name: 'space',
-    component: () => import('@/views/user/space.vue')
+    meta: {
+      title: '用户空间'
+    },
+    component: () => import(/* webpackChunkName: "user-page" */  '@/views/user/space.vue')
   }, {
     path: '/settings',
     name: 'settings',
@@ -98,13 +108,16 @@ const children = [
     name: 'message',
     component: () => import('@/views/message-board/message.vue')
   }, {
+    path: '/notice',
+    name: 'notice',
+    meta: {
+      title: "我的消息"
+    },
+    component: () => import('@/views/notice/notice.vue')
+  }, {
     path: '/rank',
     name: 'rank',
     component: () => import('@/views/common/rank.vue')
-  }, {
-    path: '/read',
-    name: 'read',
-    component: () => import('@/views/read/read.vue')
   }, {
     path: '/tutorial',
     name: 'tutorial',

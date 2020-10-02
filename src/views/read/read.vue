@@ -1,5 +1,5 @@
 <template>
-  <div id="tran">
+  <div id="read">
     <a-alert
       message="暂时就不分页查询了。。。"
       banner
@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style>
-#tran {
+#read {
   height: 100%;
   max-width: 1000px;
   margin: auto;

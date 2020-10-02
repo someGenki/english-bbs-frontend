@@ -176,4 +176,8 @@ export default {
   position: sticky;
   top: 75px;
 }
+
+.title {
+  font-weight: bold;
+}
 </style>
