@@ -28,7 +28,7 @@
 
 <script>
 import yItem from '@/components/EditableItem/index.vue'
-import { debounce } from '@/utils/common.js'
+
 const infoExplains = [
   {
     english: 'sex',
@@ -104,16 +104,16 @@ export default {
     handleChange(e) {
       this.$store.commit('debounce', {
         that: this,
-        args: { key: e.target.name, value: e.target.value },
+        args: {key: e.target.name, value: e.target.value},
         fn: this.updateUserinfo,
       })
     },
     // 更新用户信息
     updateUserinfo(args) {
-      const { key, value } = args
+      const {key, value} = args
       let ok = false
       return this.$api.updateUserinfo(key, value).then((res) => {
-        if (res.code == 200) this.$message.success(res.msg)
+        if (res.code === 200) this.$message.success(res.msg)
         else this.$message.error(res.msg)
         return new Promise((resolve, reject) => {
           resolve(true)

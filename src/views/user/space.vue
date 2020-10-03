@@ -41,9 +41,11 @@ export default {
   methods: {
     sendTweet() {
       this.$api.sendTweet(this.content).then(res => {
-        console.log(res)
         this.content = '';
         this.$message.success("发表成功")
+        setTimeout(() => {
+          location.reload();
+        }, 500)
       })
     }
   }

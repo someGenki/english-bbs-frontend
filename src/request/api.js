@@ -56,6 +56,10 @@ export default {
   updateUserinfo(key, value) {
     return axios.put(`/userinfo/update?key=${key}&value=${value}`)
   },
+  // 修改用户昵称
+  updateNickname(val) {
+    return axios.post('/user/update/nickname/' + val)
+  },
   // 获取用户动态
   getUserDynamic(uid) {
     return axios.get('/dynamic/' + uid);

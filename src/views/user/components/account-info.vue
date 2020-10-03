@@ -2,7 +2,7 @@
   <div v-if="show" id="account">
     <y-item :fieldFloat="true" :data="avatar">
       <template v-slot:show>
-        <a-avatar :src="userAvatar" shape="square" :size="80" icon="user" />
+        <a-avatar :src="userAvatar" shape="square" :size="80" icon="user"/>
       </template>
       <template v-slot:operation>
         <a-upload
@@ -20,17 +20,18 @@
       :key="i+index"
       :data="i"
       :editable="i.editable"
+      :handleSave="updateNickname"
       v-show="!i.noshow"
     ></y-item>
-    <cropper-modal :cropWidth="200" :cropHeidht="200" @ok="handleOK" ref="cropperModal" />
+    <cropper-modal :cropWidth="200" :cropHeidht="200" @ok="handleOK" ref="cropperModal"/>
   </div>
 </template>
 
 <script>
 import yItem from '@/components/EditableItem/index.vue'
 import cropperModal from '@/components/CropperModal/index.vue'
-import loginVue from '../../signin/components/login-form.vue'
-import { dataURLtoFile } from '@/utils/common.js'
+import {dataURLtoFile} from '@/utils/common.js'
+
 const accountExplains = [
   {
     english: 'username',
@@ -40,7 +41,7 @@ const accountExplains = [
   {
     english: 'nickname',
     chineses: '昵称',
-    editable: false,
+    editable: true,
   },
   {
     english: 'point',
@@ -122,6 +123,14 @@ export default {
         }
       })
     },
+    updateNickname(args) {
+      const {key, value} = args
+      console.log(args)
+      this.$api.updateNickname(value).then(res => {
+        if (res.code === 200) this.$message.success(res.msg)
+        else this.$message.error(res.msg)
+      })
+    }
   },
 }
 </script>
@@ -130,6 +139,7 @@ export default {
 #account {
   max-width: 700px;
 }
+
 .ant-avatar {
   border: 3px solid #ebe0e0;
   border-radius: 10px;
