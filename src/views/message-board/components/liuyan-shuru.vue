@@ -10,7 +10,7 @@
     />
     <div class="tool">
       <div class="left">
-        <span class="emoji">owo</span>
+        <owo-box @emotionClick="handleEmotionClick"/>
         <emotion-box @emotionClick="handleEmotionClick" />
       </div>
       <div class="right">
@@ -33,13 +33,14 @@
 <script>
 import { mapGetters } from 'vuex'
 import emotionBox from '@/components/EmotionBox/index'
+import OwoBox from '@/components/OwoBox'
 import { isBlank } from '@/utils/check.js'
 import event from '@/event'
 // 留言输入框的封装
 export default {
   name: 'LiuyanShuru',
   components: {
-    emotionBox: emotionBox,
+    emotionBox: emotionBox,OwoBox
   },
   props: {
     // 要对留言回复的那条留言的id

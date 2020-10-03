@@ -4,9 +4,7 @@
       <a-textarea placeholder="发个评论吧~" v-model="content" :rows="2"/>
       <div class="tool">
         <div class="left">
-          <a-tooltip title="未实现">
-            <span class="emoji">owo</span>
-          </a-tooltip>
+          <owo-box @emotionClick="handleEmotionClick"/>
           <emotion-box @emotionClick="handleEmotionClick"/>
         </div>
         <div class="right">
@@ -29,6 +27,7 @@
 </template>
 
 <script>
+import OwoBox from '@/components/OwoBox'
 import emotionBox from '@/components/EmotionBox/index'
 import BaseCommentItem from '@/components/Comment/Item.vue'
 import {isBlank} from '@/utils/check.js'
@@ -36,6 +35,7 @@ import {isBlank} from '@/utils/check.js'
 export default {
   name: 'BaseComment',
   components: {
+    OwoBox,
     emotionBox,
     BaseCommentItem,
   },
