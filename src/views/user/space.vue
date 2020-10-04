@@ -6,7 +6,8 @@
     <div class="publish" v-if="uid===$store.state.user.uid">
       <a-textarea v-model="content" placeholder="发布一条动态~"></a-textarea>
       <div class="toolbar">
-        <emotion-box @emotionClick="e=>{this.content += e}"/>
+        <span>   <owo-box @emotionClick="e=>{this.content += e}"/>
+        <emotion-box @emotionClick="e=>{this.content += e}"/></span>
         <a-button @click="sendTweet">发送</a-button>
       </div>
     </div>
@@ -18,12 +19,13 @@
 import ProfileHeader from '@/views/user/components/profile-header.vue'
 import UserDynamic from '@/views/user/components/user-dynamic.vue'
 import emotionBox from '@/components/EmotionBox/index'
+import OwoBox from '@/components/OwoBox'
 import {bespreadDiv} from '@/utils/common.js'
 
 export default {
   name: 'space',
   components: {
-    ProfileHeader, UserDynamic, emotionBox
+    ProfileHeader, UserDynamic, emotionBox, OwoBox
   },
   data() {
     return {

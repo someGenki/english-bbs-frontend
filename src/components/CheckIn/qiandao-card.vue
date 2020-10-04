@@ -20,23 +20,24 @@
           <template v-slot:title>
             <span style="display:none" @click="qiandaoResult=!qiandaoResult">点击折叠或展开</span>
           </template>
-          <a-descriptions-item label="获得积分">+{{qiandaoInfo.signPoint||0}}</a-descriptions-item>
-          <a-descriptions-item label="签到结果">{{!qiandaoInfo.signResult?'签到成功':'已签到'}}</a-descriptions-item>
-          <a-descriptions-item label="今日签到排名">{{qiandaoInfo.signRank}}</a-descriptions-item>
-          <a-descriptions-item label="本月首次签到日期">{{qiandaoInfo.firstSignDate}}</a-descriptions-item>
-          <a-descriptions-item label="当月总签到次数">{{qiandaoInfo.signCount}}</a-descriptions-item>
-          <a-descriptions-item label="至今连续签到次数">{{qiandaoInfo.signContNow}}</a-descriptions-item>
-          <a-descriptions-item label="至今总签到次数">{{qiandaoInfo.signContAll}}</a-descriptions-item>
-          <a-descriptions-item label="最大连续签到次数">{{qiandaoInfo.signContMax}}</a-descriptions-item>
+          <!--          积分暂时写死-->
+          <a-descriptions-item label="获得积分">+{{ qiandaoInfo.signPoint + 5 || 0 + 5 }}</a-descriptions-item>
+          <a-descriptions-item label="签到结果">{{ !qiandaoInfo.signResult ? '签到成功' : '已签到' }}</a-descriptions-item>
+          <a-descriptions-item label="今日签到排名">{{ qiandaoInfo.signRank }}</a-descriptions-item>
+          <a-descriptions-item label="本月首次签到日期">{{ qiandaoInfo.firstSignDate }}</a-descriptions-item>
+          <a-descriptions-item label="当月总签到次数">{{ qiandaoInfo.signCount }}</a-descriptions-item>
+          <a-descriptions-item label="至今连续签到次数">{{ qiandaoInfo.signContNow }}</a-descriptions-item>
+          <a-descriptions-item label="至今总签到次数">{{ qiandaoInfo.signContAll }}</a-descriptions-item>
+          <a-descriptions-item label="最大连续签到次数">{{ qiandaoInfo.signContMax }}</a-descriptions-item>
         </a-descriptions>
       </transition>
     </div>
     <!-- 签到排行 -->
     <div v-if="loadRank" class="rank" v-show="noTitleKey === 'info'">
       <span class="tongji">
-        今日签到人数:{{1}}
-        <a-divider type="vertical" />
-        本月签到人数:{{2}}
+        今日签到人数:{{ 1 }}
+        <a-divider type="vertical"/>
+        本月签到人数:{{ 2 }}
       </span>
       <a-tabs>
         <a-tab-pane key="1" tab="总签到次数">
@@ -44,7 +45,7 @@
             <a-list-item slot="renderItem" slot-scope="item">
               <a-list-item-meta :description="'共计'+item.times+'次签到'">
                 <router-link slot="title" :to="'/space/'+item.uid">{{ item.nickname }}</router-link>
-                <a-avatar slot="avatar" icon="user" :src="item.avatar" />
+                <a-avatar slot="avatar" icon="user" :src="item.avatar"/>
               </a-list-item-meta>
             </a-list-item>
           </a-list>
@@ -55,7 +56,7 @@
             <a-list-item v-show="item.times!=-1" slot="renderItem" slot-scope="item">
               <a-list-item-meta :description="'连续'+item.times+'次签到'">
                 <router-link slot="title" :to="'/space/'+item.uid">{{ item.nickname }}</router-link>
-                <a-avatar slot="avatar" icon="user" :src="item.avatar" />
+                <a-avatar slot="avatar" icon="user" :src="item.avatar"/>
               </a-list-item-meta>
             </a-list-item>
           </a-list>
@@ -68,7 +69,7 @@
 
 <script>
 export default {
-  name:'QianDaoCard',
+  name: 'QianDaoCard',
   data() {
     return {
       tabListNoTitle: [
@@ -114,37 +115,46 @@ export default {
       })
     },
   },
-  created() {},
+  created() {
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 @import '@/assets/mixins/_button.scss';
+
 .qd-card {
   background-color: transparent;
+
   ::v-deep .ant-tabs-nav {
     font-size: 14px;
   }
+
   ::v-deep .ant-descriptions-title {
     margin-bottom: 10px;
     font-size: 14px;
   }
+
   ::v-deep
-    .ant-descriptions-bordered.ant-descriptions-small
-    .ant-descriptions-item-content {
+  .ant-descriptions-bordered.ant-descriptions-small
+  .ant-descriptions-item-content {
     padding: 6px 8px;
   }
+
   ::v-deep
-    .ant-descriptions-bordered.ant-descriptions-small
-    .ant-descriptions-item-label {
+  .ant-descriptions-bordered.ant-descriptions-small
+  .ant-descriptions-item-label {
     padding: 6px 8px;
   }
+
   ::v-deep .ant-tabs .ant-tabs-large-bar .ant-tabs-tab {
     padding: 16px 0;
     border: none;
   }
+
   .qd {
     margin-top: -20px;
+
     > .qd-btn {
       display: block;
       margin: 20px auto;
@@ -153,8 +163,10 @@ export default {
       @include bubble();
     }
   }
+
   .rank {
     margin-top: -20px;
+
     > .tongji {
       display: inline-block;
       width: 100%;
@@ -163,6 +175,7 @@ export default {
     }
   }
 }
+
 .ant-list-item {
   padding: 5px 0;
 }

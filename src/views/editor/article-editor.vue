@@ -23,6 +23,7 @@
     <a-textarea
       v-model="form.description"
       placeholder="添加一段描述，用于展示"
+      :maxLength="128"
       :auto-size="{ minRows: 3, maxRows: 5 }"
     />
     <div class="tag-group">

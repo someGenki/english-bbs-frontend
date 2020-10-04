@@ -1,10 +1,6 @@
 <template>
   <div id="read">
-    <a-alert
-      message="暂时就不分页查询了。。。"
-      banner
-      closable
-    />
+
     <article-card v-for="article in articles" :key="article.id" :article="article"/>
 
   </div>

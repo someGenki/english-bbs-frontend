@@ -71,7 +71,6 @@
       <a-button @click="commit">发布</a-button>
       <a-button @click="temporaryStorage">暂存</a-button>
       <a-button @click="cancel">取消</a-button>
-      <a-button @click="test">test</a-button>
     </div>
     <a-alert v-show="tipsText" closable :message="tipsText" :type="tipsType" show-icon/>
   </div>

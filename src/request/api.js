@@ -151,7 +151,7 @@ export default {
     return axios.post('/article/commit', form)
   },
   // 获取文章list
-  getArticleList(num = 1, size = 5, search = '') {
+  getArticleList(num = 1, size = 7, search = '') {
     let tmp = search === 'default' ? '' : `&search=${search}`;
     return axios.get(`/article/page?num=${num}&size=${size}` + tmp)
   },

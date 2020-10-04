@@ -10,9 +10,7 @@
     <a-col v-show="big" :span="6">
       <div class="sticky">
         <a-card title="相关推荐">
-          <p>Card 未实现</p>
-          <p>Card 未实现</p>
-          <p>Card 未实现</p>
+          <a-empty/>
         </a-card>
         <Catalogue :selector="'.v-show-content'" v-if="post"/>
       </div>

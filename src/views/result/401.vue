@@ -4,7 +4,7 @@
     <template #extra>
       <!-- 可以来个去signin的链接 -->
       <h3 v-show="msg">error message:{{msg}}</h3>
-      <a-button type="primary" @click="$router.go(-1)">go back</a-button>
+      <a-button type="primary" @click="reLogin">重新登录</a-button>
     </template>
   </a-result>
 </template>
@@ -18,5 +18,10 @@ export default {
     console.log(this.$route)
     console.log('msg' + this.msg)
   },
+  methods:{
+    reLogin(){
+      this.$store.dispatch(`user/logout`, this);
+    }
+  }
 }
 </script>
