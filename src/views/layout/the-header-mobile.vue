@@ -15,7 +15,7 @@
         <a-icon class="white" v-show="!$store.state.sider" type="menu-unfold"/>
       </a-button>
       <a href="/" class="logo">
-        <img src="@/assets/images/logo.png" alt/>
+        <img src="@/assets/images/logo.png"  height="60" alt/>
       </a>
       <!-- 头像区域 -->
       <div>

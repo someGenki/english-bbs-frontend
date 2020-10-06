@@ -14,7 +14,7 @@
     <a-menu :theme="theme" mode="horizontal" v-model="currentMenu">
       <a-menu-item key="no1" style="border:none">
         <a href="/" class="logo">
-          <img src="@/assets/images/logo.png" alt/>
+          <img src="@/assets/images/logo.png" height="60" alt/>
         </a>
       </a-menu-item>
       <a-menu-item v-for="menu in menus" :key="menu.key+'pc'" :disabled="menu.disable">
